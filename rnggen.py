@@ -1,182 +1,180 @@
-
-# -*- coding: utf-8 -*-
-
 import cv2
 import numpy as np
-import argparse
-import math
-from tqdm import tqdm
-import sys
 import time
+import matplotlib.pyplot as plt
+import math
+import sys # To handle potential errors more gracefully
 
-def setup_camera(index=0, width=640, height=480):
-    """Initializes the camera."""
-    cap = cv2.VideoCapture(index)
+# --- Configuration ---
+NUM_BITS_NEEDED = 1024 * 1024 * 8 * 13  # Generate 1 MiB worth of bits (adjust as needed)
+OUTPUT_FILENAME = "random_output.bin"
+BRIGHTNESS_MIN = 2
+BRIGHTNESS_MAX = 253
+CAMERA_INDEX = 0 # 0 is usually the default built-in camera
+
+# --- Algorithm Implementation ---
+
+def generate_random_bits(num_bits_to_generate):
+    """
+    Implements Algorithm 1 to generate random bits using the camera.
+    """
+    print("Initializing camera...")
+    cap = cv2.VideoCapture(CAMERA_INDEX)
+
     if not cap.isOpened():
-        print(f"Błąd: Nie można otworzyć kamery o indeksie {index}.", file=sys.stderr)
-        return None
-    # Optional: Set resolution (might not be supported by all cameras)
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, width)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, height)
-    print(f"Kamera {index} otwarta.")
-    # Allow camera to warm up/adjust
-    time.sleep(1)
-    return cap
+        print(f"Error: Could not open camera with index {CAMERA_INDEX}.")
+        print("Please ensure a camera is connected and drivers are installed.")
+        print("Try changing CAMERA_INDEX if you have multiple cameras.")
+        sys.exit(1) # Exit if camera cannot be opened
+    
+    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
+    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
-def capture_frame(cap):
-    """Captures a single frame from the camera."""
-    ret, frame = cap.read()
-    if not ret or frame is None:
-        print("Błąd: Nie można odczytać klatki z kamery.", file=sys.stderr)
-        return None
-    return frame # Frame is typically in BGR format
+    width = int(cap.get(cv2.CAP_PROP_FRAME_WIDTH))
+    height = int(cap.get(cv2.CAP_PROP_FRAME_HEIGHT))
+    print(f"Camera resolution: {width}x{height}")
 
-def process_frame(frame, frame_index):
-    """
-    Processes a single frame according to the algorithm:
-    1. Filter pixels based on brightness [2, 253] for each RGB channel.
-    2. Extract the Least Significant Bit (LSB) from valid channels.
-    3. Flip bits if the frame index is odd (matching diagram: Frame 2=idx 1 flips, Frame 4=idx 3 flips).
-    Returns a list of bits.
-    """
-    if frame is None:
-        return []
-
-    # Create a mask for pixels/channels within the brightness range [2, 253]
-    # Apply to each channel independently
-    mask = (frame >= 2) & (frame <= 253) # Shape: (height, width, 3)
-
-    # Extract the values that satisfy the mask
-    valid_channel_values = frame[mask] # Flattens into 1D array
-
-    # Extract the LSB (value & 1)
-    lsb_bits = valid_channel_values & 1
-
-    # --- Bit Flipping ---
-    # The pseudocode says "If (Frame is even) flip".
-    # The diagram shows Frame 2 (index 1) and Frame 4 (index 3) flipping.
-    # We follow the DIAGRAM's logic: flip on ODD indices (1, 3, 5...).
-    if frame_index % 2 != 0: # Flip bits for odd frame indices (1, 3, ...)
-        sub_list = lsb_bits[::-1].tolist() # Reverse the order of bits]
-    else:
-        sub_list = lsb_bits.tolist() # Keep bits as they are
-
-    return sub_list
-
-def bits_to_bytes(bits):
-    """Converts a list of bits (0s and 1s) into a byte string."""
-    if not bits:
-        return b''
-
-    # Pad with 0s at the end to make the total length a multiple of 8
-    # This aligns with pseudocode C4 "Extra bits are appended..." interpreted
-    # as needing byte-alignment for file output.
-    padding = (8 - len(bits) % 8) % 8
-    padded_bits = bits + [0] * padding
-
-    byte_array = bytearray()
-    for i in range(0, len(padded_bits), 8):
-        byte_val = 0
-        for j in range(8):
-            byte_val = (byte_val << 1) | padded_bits[i+j]
-        byte_array.append(byte_val)
-
-    return bytes(byte_array)
-
-def main():
-    parser = argparse.ArgumentParser(description="Generuje losowe bity używając kamery internetowej zgodnie z Algorytmem 1.")
-    parser.add_argument("-n", "--num-bits", type=int, default=13 * 1024 * 1024 * 8,
-                        help="Liczba bitów do wygenerowania (domyślnie: 13MB ≈ 109 milionów bitów)")
-    parser.add_argument("-o", "--output-file", type=str, default="random_bits.bin",
-                        help="Plik binarny do zapisu wygenerowanych bitów (domyślnie: random_bits.bin)")
-    parser.add_argument("-c", "--camera-index", type=int, default=0,
-                        help="Indeks kamery do użycia (domyślnie: 0)")
-    parser.add_argument("-w", "--width", type=int, default=640, help="Szerokość klatki kamery (domyślnie: 640)")
-    parser.add_argument("-H", "--height", type=int, default=480, help="Wysokość klatki kamery (domyślnie: 480)")
-
-    args = parser.parse_args()
-
-    num_needed_bits = args.num_bits
-    output_filename = args.output_file
-    camera_index = args.camera_index
-    frame_width = args.width
-    frame_height = args.height
-
-    print(f"Żądana liczba bitów: {num_needed_bits}")
-    print(f"Plik wyjściowy: {output_filename}")
-    print(f"Indeks kamery: {camera_index}")
-
-    cap = setup_camera(camera_index, frame_width, frame_height)
-    if cap is None:
-        sys.exit(1) # Error message already printed by setup_camera
-
-    final_bits = []
+    # Variables
+    final_list_bits = []
     num_so_far = 0
-    frame_count = 0 # Start counting frames from 0
+    frame_count = 0
+
+    print(f"Starting generation of {num_bits_to_generate} bits...")
+    start_time = time.time()
 
     # --- Generation Loop ---
-    print("Rozpoczynanie generowania bitów...")
+    while num_so_far < num_bits_to_generate:
+        # C1: Take one snapshot
+        ret, frame = cap.read()
+        if not ret:
+            print("Warning: Failed to capture frame. Skipping.")
+            time.sleep(0.1) # Avoid busy-waiting if camera fails temporarily
+            continue
+
+        frame_count += 1
+
+        # Convert to grayscale to get brightness values
+        gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
+
+        # Pick out the brightness values within the specified range [2, 253]
+        # O(N) where N is number of pixels
+        valid_pixels = gray_frame[(gray_frame >= BRIGHTNESS_MIN) & (gray_frame <= BRIGHTNESS_MAX)]
+
+        if valid_pixels.size == 0:
+            # print("Warning: No pixels in the valid brightness range in this frame.")
+            continue # Skip if no valid pixels found
+
+        # Take the last bits (LSB - Least Significant Bit) as a SubList
+        # O(N)
+        sub_list_bits_np = valid_pixels & 1 # Use bitwise AND to get the LSB
+
+        # If (Frame is even) flip the bits in SubList
+        # O(N)
+        if frame_count % 2 == 0:
+            sub_list_bits_np = 1 - sub_list_bits_np # Flip 0s to 1s and 1s to 0s
+
+        # Convert numpy array to list for extending
+        sub_list = sub_list_bits_np.tolist()
+
+        # C2: Add SubList to FinalList (row-major is implicit when extending a list)
+        final_list_bits.extend(sub_list)
+
+        # C3: Update count
+        num_so_far += len(sub_list)
+
+        # Optional: Display progress
+        if frame_count % 30 == 0: # Update every ~second assuming ~30fps
+             progress = min(100, (num_so_far / num_bits_to_generate) * 100)
+             print(f"Progress: {progress:.2f}% ({num_so_far} / {num_bits_to_generate} bits)", end='\r')
+
+        # Optional: Allow breaking the loop with a key press (e.g., 'q')
+        # cv2.imshow('Camera Feed (Press Q to stop early)', frame) # Uncomment to see feed
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+        #    print("\nGeneration stopped by user.")
+        #    break
+
+    # --- End While ---
+    end_time = time.time()
+    print(f"\nGeneration complete. Collected {num_so_far} bits.")
+
+    # --- Timing End ---
+    duration = end_time - start_time
+    bits_per_second = num_so_far / duration if duration > 0 else 0
+    print(f"Total time: {duration:.2f} seconds")
+    print(f"Generation speed: {bits_per_second:.2f} bits/second ({bits_per_second/8/1024:.2f} KB/s)")
+
+    # Release camera
+    cap.release()
+    cv2.destroyAllWindows() # Close any OpenCV windows if they were opened
+
+    # C4: Extra bits are implicitly kept as we only stop *after* exceeding NumNeeded
+
+    # Note on "Print in column-major order":
+    # This is ambiguous for a 1D list of bits being written to a binary file.
+    # Standard practice is to pack bits sequentially into bytes. If a 2D structure
+    # was intended, the algorithm doesn't specify dimensions or how to handle
+    # non-square numbers of bits. We will pack sequentially.
+
+    return final_list_bits
+
+def save_bits_to_binary_file(bits, filename):
+    """
+    Packs a list of bits into bytes and saves to a binary file.
+    """
+    print(f"Packing bits and saving to '{filename}'...")
+    # Pad with zeros if length is not multiple of 8 for np.packbits
+    remainder = len(bits) % 8
+    if remainder != 0:
+        padding = 8 - remainder
+        bits.extend([0] * padding)
+        print(f"Note: Padded with {padding} zero bits to align to bytes.")
+
+    # Convert list of bits (0s/1s) into a NumPy array of uint8
+    bit_array = np.array(bits, dtype=np.uint8)
+
+    # Pack bits into bytes (8 bits per byte)
+    byte_array = np.packbits(bit_array)
+
+    # Write bytes to binary file
     try:
-        # Initialize tqdm progress bar
-        pbar = tqdm(total=num_needed_bits, unit='bit', desc="Generowanie", ncols=100)
-
-        while num_so_far < num_needed_bits:
-            frame = capture_frame(cap)
-            if frame is None:
-                print("\nBłąd odczytu klatki, przerywanie.", file=sys.stderr)
-                break # Exit loop if frame capture fails
-
-            # Process the frame
-            sub_list = process_frame(frame, frame_count)
-
-            if sub_list: # Only append and update count if bits were generated
-                final_bits.extend(sub_list)
-                new_bits_count = len(sub_list)
-                # Update progress bar safely
-                update_amount = min(new_bits_count, num_needed_bits - num_so_far)
-                pbar.update(update_amount)
-                num_so_far += new_bits_count
-
-            frame_count += 1
-
-        pbar.close() # Ensure progress bar finishes cleanly
-
-        if num_so_far < num_needed_bits:
-             print(f"\nOstrzeżenie: Wygenerowano tylko {num_so_far} z {num_needed_bits} żądanych bitów.", file=sys.stderr)
-        else:
-            print(f"\nZakończono generowanie. Całkowita liczba wygenerowanych bitów: {num_so_far}")
-            # Note: We keep all generated bits, including extras beyond num_needed_bits,
-            # as per step C4 ("Extra bits are appended").
-
-    except KeyboardInterrupt:
-        print("\nPrzerwano przez użytkownika.", file=sys.stderr)
-        # Decide if you want to save the partially generated bits
-        # For now, we'll just exit, but saving could be added here.
-    finally:
-        # --- Cleanup ---
-        if cap and cap.isOpened():
-            cap.release()
-            print("Kamera zwolniona.")
-        # cv2.destroyAllWindows() # Not needed as we don't show windows
-
-    # --- Output ---
-    if not final_bits:
-        print("Nie wygenerowano żadnych bitów. Plik wyjściowy nie zostanie utworzony.", file=sys.stderr)
-        sys.exit(1)
-
-    print(f"Konwertowanie {len(final_bits)} bitów na bajty...")
-    byte_data = bits_to_bytes(final_bits)
-    num_bytes = len(byte_data)
-    print(f"Rozmiar danych binarnych: {num_bytes} bajtów.")
-
-    try:
-        print(f"Zapisywanie do pliku: {output_filename}")
-        with open(output_filename, 'wb') as f:
-            f.write(byte_data)
-        print(f"Pomyślnie zapisano {len(final_bits)} bitów ({num_bytes} bajtów) do {output_filename}")
+        with open(filename, 'wb') as f:
+            f.write(byte_array.tobytes())
+        print(f"Successfully saved {len(byte_array)} bytes to {filename}")
     except IOError as e:
-        print(f"Błąd: Nie można zapisać do pliku {output_filename}: {e}", file=sys.stderr)
+        print(f"Error: Could not write to file {filename}. {e}")
         sys.exit(1)
 
+    return byte_array # Return the bytes for histogram plotting
+
+def plot_histogram(byte_data, title="Histogram of Generated Byte Values"):
+    """
+    Plots a histogram of the byte values (0-255).
+    """
+    print("Generating histogram...")
+    if byte_data is None or len(byte_data) == 0:
+        print("No data to plot histogram.")
+        return
+
+    plt.figure(figsize=(10, 6))
+    # Use 256 bins for byte values 0-255
+    counts, bin_edges, patches = plt.hist(byte_data, bins=256, range=(0, 256), density=False, alpha=0.75)
+    plt.xlabel("Byte Value (0-255)")
+    plt.ylabel("Frequency")
+    plt.title(title)
+    plt.grid(axis='y', alpha=0.5)
+
+    # Calculate expected frequency for uniform distribution
+    expected_count = len(byte_data) / 256
+    plt.axhline(expected_count, color='r', linestyle='dashed', linewidth=1, label=f'Expected Uniform Count ({expected_count:.2f})')
+    plt.legend()
+
+    print("Displaying histogram...")
+    plt.show()
+
+
+# --- Main Execution ---
 if __name__ == "__main__":
-    main()
+    generated_bits = generate_random_bits(NUM_BITS_NEEDED)
+    generated_bytes = save_bits_to_binary_file(generated_bits, OUTPUT_FILENAME)
+    plot_histogram(generated_bytes)
+    print("Done.")

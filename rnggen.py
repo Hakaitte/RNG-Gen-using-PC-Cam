@@ -3,19 +3,14 @@ import numpy as np
 import time
 import matplotlib.pyplot as plt
 import math
-import sys
-from Crypto.Cipher import AES
-from Crypto.Util.Padding import pad
-from Crypto.Random import get_random_bytes
-import hashlib  # For additional hashing
+import sys # To handle potential errors more gracefully
 
 # --- Configuration ---
-NUM_BITS_NEEDED = 1024 * 1024 * 8 * 13  # Generate 1 MiB worth of bits (adjust as needed)
+NUM_BITS_NEEDED = 1024 * 1024 * 8 * 1  # Generate 1 MiB worth of bits (adjust as needed)
 OUTPUT_FILENAME = "random_output.bin"
-HASH_FILENAME = "random_output_hash.bin"
 BRIGHTNESS_MIN = 2
 BRIGHTNESS_MAX = 253
-CAMERA_INDEX = 0  # 0 is usually the default built-in camera
+CAMERA_INDEX = 0
 
 # --- Algorithm Implementation ---
 
@@ -30,8 +25,8 @@ def generate_random_bits(num_bits_to_generate):
         print(f"Error: Could not open camera with index {CAMERA_INDEX}.")
         print("Please ensure a camera is connected and drivers are installed.")
         print("Try changing CAMERA_INDEX if you have multiple cameras.")
-        sys.exit(1)  # Exit if camera cannot be opened
-
+        sys.exit(1) # Exit if camera cannot be opened
+    
     cap.set(cv2.CAP_PROP_FRAME_WIDTH, 640)
     cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 480)
 
@@ -40,6 +35,7 @@ def generate_random_bits(num_bits_to_generate):
     print(f"Camera resolution: {width}x{height}")
 
     # Variables
+    default_list_bits = []
     final_list_bits = []
     num_so_far = 0
     frame_count = 0
@@ -53,26 +49,30 @@ def generate_random_bits(num_bits_to_generate):
         ret, frame = cap.read()
         if not ret:
             print("Warning: Failed to capture frame. Skipping.")
-            time.sleep(0.1)  # Avoid busy-waiting if camera fails temporarily
+            time.sleep(0.1) # Avoid busy-waiting if camera fails temporarily
             continue
 
         frame_count += 1
 
+        gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
+        all_pixels_lsb_np = gray_frame & 1 # LSB każdego piksela
+        default_list_bits.extend(all_pixels_lsb_np.flatten().tolist())
         # Convert to grayscale to get brightness values
         gray_frame = cv2.cvtColor(frame, cv2.COLOR_BGR2GRAY)
-
-        # Pick out the brightness values within the specified range [2, 253]
         valid_pixels = gray_frame[(gray_frame >= BRIGHTNESS_MIN) & (gray_frame <= BRIGHTNESS_MAX)]
 
         if valid_pixels.size == 0:
-            continue  # Skip if no valid pixels found
+            # print("Warning: No pixels in the valid brightness range in this frame.")
+            continue # Skip if no valid pixels found
 
         # Take the last bits (LSB - Least Significant Bit) as a SubList
-        sub_list_bits_np = valid_pixels & 1  # Use bitwise AND to get the LSB
+        # O(N)
+        sub_list_bits_np = valid_pixels & 1 # Use bitwise AND to get the LSB
 
         # If (Frame is even) flip the bits in SubList
+        # O(N)
         if frame_count % 2 == 0:
-            sub_list_bits_np = 1 - sub_list_bits_np  # Flip 0s to 1s and 1s to 0s
+            sub_list_bits_np = 1 - sub_list_bits_np # Flip 0s to 1s and 1s to 0s
 
         # Convert numpy array to list for extending
         sub_list = sub_list_bits_np.tolist()
@@ -84,9 +84,15 @@ def generate_random_bits(num_bits_to_generate):
         num_so_far += len(sub_list)
 
         # Optional: Display progress
-        if frame_count % 30 == 0:  # Update every ~second assuming ~30fps
-            progress = min(100, (num_so_far / num_bits_to_generate) * 100)
-            print(f"Progress: {progress:.2f}% ({num_so_far} / {num_bits_to_generate} bits)", end='\r')
+        if frame_count % 30 == 0: # Update every ~second assuming ~30fps
+             progress = min(100, (num_so_far / num_bits_to_generate) * 100)
+             print(f"Progress: {progress:.2f}% ({num_so_far} / {num_bits_to_generate} bits)", end='\r')
+
+        # Optional: Allow breaking the loop with a key press (e.g., 'q')
+        # cv2.imshow('Camera Feed (Press Q to stop early)', frame) # Uncomment to see feed
+        # if cv2.waitKey(1) & 0xFF == ord('q'):
+        #    print("\nGeneration stopped by user.")
+        #    break
 
     # --- End While ---
     end_time = time.time()
@@ -100,24 +106,37 @@ def generate_random_bits(num_bits_to_generate):
 
     # Release camera
     cap.release()
-    cv2.destroyAllWindows()
+    cv2.destroyAllWindows() # Close any OpenCV windows if they were opened
 
-    return final_list_bits
+    # C4: Extra bits are implicitly kept as we only stop *after* exceeding NumNeeded
+
+    # Note on "Print in column-major order":
+    # This is ambiguous for a 1D list of bits being written to a binary file.
+    # Standard practice is to pack bits sequentially into bytes. If a 2D structure
+    # was intended, the algorithm doesn't specify dimensions or how to handle
+    # non-square numbers of bits. We will pack sequentially.
+
+    return final_list_bits, default_list_bits
 
 def save_bits_to_binary_file(bits, filename):
     """
     Packs a list of bits into bytes and saves to a binary file.
     """
     print(f"Packing bits and saving to '{filename}'...")
+    # Pad with zeros if length is not multiple of 8 for np.packbits
     remainder = len(bits) % 8
     if remainder != 0:
         padding = 8 - remainder
         bits.extend([0] * padding)
         print(f"Note: Padded with {padding} zero bits to align to bytes.")
 
+    # Convert list of bits (0s/1s) into a NumPy array of uint8
     bit_array = np.array(bits, dtype=np.uint8)
+
+    # Pack bits into bytes (8 bits per byte)
     byte_array = np.packbits(bit_array)
 
+    # Write bytes to binary file
     try:
         with open(filename, 'wb') as f:
             f.write(byte_array.tobytes())
@@ -126,38 +145,7 @@ def save_bits_to_binary_file(bits, filename):
         print(f"Error: Could not write to file {filename}. {e}")
         sys.exit(1)
 
-    # Remove 0 and 255 values from the byte array
-    byte_array = byte_array[(byte_array != 0) & (byte_array != 255)]
-    return byte_array
-
-def hash_with_aes(byte_data, hash_filename):
-    """
-    Hashes the byte data using AES in CBC mode and saves the hash to a file.
-    """
-    print("Hashing data with AES...")
-    key = get_random_bytes(16)  # Generate a random 16-byte key
-    cipher = AES.new(key, AES.MODE_CBC)  # Create AES cipher in CBC mode
-    iv = cipher.iv  # Initialization vector
-
-    # Convert numpy array to bytes
-    byte_data = byte_data.tobytes()
-
-    # Pad the data to make it a multiple of the AES block size (16 bytes)
-    padded_data = pad(byte_data, AES.block_size)
-
-    # Encrypt the data
-    encrypted_data = cipher.encrypt(padded_data)
-
-    # Save the hash (encrypted data) to a file
-    try:
-        with open(hash_filename, 'wb') as f:
-            f.write(iv + encrypted_data)  # Save IV + encrypted data
-        print(f"Successfully saved AES hash to {hash_filename}")
-    except IOError as e:
-        print(f"Error: Could not write to file {hash_filename}. {e}")
-        sys.exit(1)
-
-    return encrypted_data
+    return byte_array # Return the bytes for histogram plotting
 
 def plot_histogram(byte_data, title="Histogram of Generated Byte Values"):
     """
@@ -168,17 +156,15 @@ def plot_histogram(byte_data, title="Histogram of Generated Byte Values"):
         print("No data to plot histogram.")
         return
 
-    # Ensure byte_data is a numpy array of uint8
-    if not isinstance(byte_data, np.ndarray):
-        byte_data = np.frombuffer(byte_data, dtype=np.uint8)
-
     plt.figure(figsize=(10, 6))
+    # Use 256 bins for byte values 0-255
     counts, bin_edges, patches = plt.hist(byte_data, bins=256, range=(0, 256), density=False, alpha=0.75)
     plt.xlabel("Byte Value (0-255)")
     plt.ylabel("Frequency")
     plt.title(title)
     plt.grid(axis='y', alpha=0.5)
 
+    # Calculate expected frequency for uniform distribution
     expected_count = len(byte_data) / 256
     plt.axhline(expected_count, color='r', linestyle='dashed', linewidth=1, label=f'Expected Uniform Count ({expected_count:.2f})')
     plt.legend()
@@ -186,11 +172,12 @@ def plot_histogram(byte_data, title="Histogram of Generated Byte Values"):
     print("Displaying histogram...")
     plt.show()
 
+
 # --- Main Execution ---
 if __name__ == "__main__":
-    generated_bits = generate_random_bits(NUM_BITS_NEEDED)
+    generated_bits, default_bits = generate_random_bits(NUM_BITS_NEEDED)
     generated_bytes = save_bits_to_binary_file(generated_bits, OUTPUT_FILENAME)
-    encrypted_data = hash_with_aes(generated_bytes, HASH_FILENAME)
-    plot_histogram(generated_bytes, title="Histogram of Generated Byte Values")
-    plot_histogram(encrypted_data, title="Histogram of Encrypted Data Values")
+    default_bytes = save_bits_to_binary_file(default_bits, "default_output.bin")
+    plot_histogram(default_bytes, title="Histogram of Default Byte Values")
+    plot_histogram(generated_bytes)
     print("Done.")

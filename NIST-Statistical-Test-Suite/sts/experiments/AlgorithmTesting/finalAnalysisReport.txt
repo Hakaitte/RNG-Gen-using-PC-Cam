@@ -5,194 +5,194 @@ RESULTS FOR THE UNIFORMITY OF P-VALUES AND THE PROPORTION OF PASSING SEQUENCES
 ------------------------------------------------------------------------------
  C1  C2  C3  C4  C5  C6  C7  C8  C9 C10  P-VALUE  PROPORTION  STATISTICAL TEST
 ------------------------------------------------------------------------------
-  2   1   0   0   0   0   0  96   0   1  0.000000 *   99/100     Frequency
-  0  94   0   0   1   2   1   0   2   0  0.000000 *  100/100     BlockFrequency
-  2   0   1   0   0   0   0   1   1  95  0.000000 *   99/100     CumulativeSums
-  2   0   1   0   0   0   0   0   1  96  0.000000 *   99/100     CumulativeSums
-  0   2   0   0   1   1   1   0   0  95  0.000000 *  100/100     Runs
- 94   0   0   0   1   0   1   2   1   1  0.000000 *  100/100     LongestRun
-  0  94   1   2   1   1   0   1   0   0  0.000000 *  100/100     Rank
-  0  95   0   1   0   0   3   1   0   0  0.000000 *  100/100     FFT
-  2   0  94   1   0   0   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  94   0   1   1   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   2   0   3   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   0   1   0   0   2   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   1   0   2   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   1   0   1   2   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   2   1   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   0   0   1   1   3   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   0   0   2   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   1   0   2   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   2   2   0   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   0   2   0   0   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   0   0   1   0   4   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  93   0   0   2   1   0   1   0  0.000000 *   99/100     NonOverlappingTemplate
-  0   0  93   1   1   1   1   2   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   1   0   0   2   1   2  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   1   1   0   1   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   0   0   2   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  94   0   0   0   2   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   1  94   0   0   0   2   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   0   2   1   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  3   1  93   1   2   0   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  94   0   1   0   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  93   1   0   1   1   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  95   0   0   1   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   2   0   1   0   1   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  94   0   1   1   0   0   0   3  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  95   0   1   2   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   0   1   1   0   0   4  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  94   0   0   0   0   1   0   2  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   2   1   1   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  3   0  93   0   2   0   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   2   0   0   1   1   2  0.000000 *  100/100     NonOverlappingTemplate
-  0   3  93   0   0   0   0   2   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   1   0   1   2   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   1   1   1   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   1   2   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   0   0   1   1   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   2   1   1   1   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   1   2   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  94   1   0   1   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  95   0   0   1   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   1   1   1   1   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  96   0   1   0   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  93   2   1   1   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   3   0   0   0   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   1   1   0   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   2   1   1   0   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   3   0   0   1   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   1   0   2   0   3   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  95   0   0   1   2   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   0   0   0   0   0   0   4  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  95   0   2   0   0   0   3   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   0   2   1   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   0   1   2   0   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  95   1   0   1   2   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   0   2   2   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   2   0   2   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  94   1   1   0   0   1   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   0   1   2   1   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  94   0   1   1   2   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   1   0   0   1   3   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   1   0   0   1   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   0   0   3   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   2   0   2   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   0   1   1   0   2   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  93   0   1   1   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   0   2   2   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   0   1   0   3   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   1   2   0   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   3  94   2   0   0   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  94   0   0   0   1   2   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  94   0   1   0   0   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   0   1   0   0   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  94   1   0   0   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   2   1   0   2   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   0   0   0   2   1   3  0.000000 *   99/100     NonOverlappingTemplate
-  1   1  96   0   0   0   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   1  93   0   1   1   1   1   0   0  0.000000 *   99/100     NonOverlappingTemplate
-  1   0  95   1   0   0   1   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   1   1   0   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   1   1   3   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  95   0   2   3   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  93   1   0   0   2   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   2   1   1   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   0   0   1   1   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   0   2   0   0   1   3   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  94   1   1   0   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   3  93   0   0   1   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  93   0   0   0   1   3   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  96   0   0   1   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   3   1   1   0   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   1   1   1   2   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  94   2   0   1   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   1   0   1   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  94   0   1   1   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   0   1   1   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   1  96   0   0   1   0   0   0   0  0.000000 *   99/100     NonOverlappingTemplate
-  1   1  94   0   2   0   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   3  93   0   2   0   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  94   1   1   0   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  94   0   2   0   0   0   0   2  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  95   1   0   1   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   1  94   0   0   0   0   1   2   0  0.000000 *   99/100     NonOverlappingTemplate
-  0   0  94   3   1   1   0   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  94   0   0   0   0   1   2   2  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   1   2   0   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   0   0   1   1   3   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  94   1   0   0   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  94   0   1   0   1   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   0   2   1   1   0   2  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   0   4   0   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  94   1   0   1   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   0   0   0   0   2   1   3  0.000000 *  100/100     NonOverlappingTemplate
-  0   2  96   0   0   2   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  93   0   0   1   2   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  95   2   0   0   0   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  94   1   0   0   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   2  94   1   0   0   0   0   0   1  0.000000 *   99/100     NonOverlappingTemplate
-  2   1  95   0   0   0   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   1   0   0   1   2   2  0.000000 *   99/100     NonOverlappingTemplate
-  0   2  93   2   1   2   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   1  93   0   1   0   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  94   0   0   1   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   1   0   0   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   1   0   0   2   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   1   0   0   1   2   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   2   0   1   0   3   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   1   2   0   0   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  93   0   2   2   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   0   0   0   4   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   1   1   2   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   2  95   0   0   0   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  96   2   0   1   0   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   1   2   1   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  2   1  93   0   1   2   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  2   0  93   3   0   1   0   0   0   1  0.000000 *   99/100     NonOverlappingTemplate
-  0   0  93   3   1   1   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   3  94   1   0   0   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   1   1   1   3   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   0   2   1   0   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  93   0   0   2   1   0   0   3  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  93   1   1   0   0   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
-  0   0  94   2   0   0   1   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
-  0   1  95   1   0   1   2   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  94   0   0   1   2   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   0  93   0   0   0   2   1   2   1  0.000000 *  100/100     NonOverlappingTemplate
-  1   1  94   0   1   0   0   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
-  0  94   2   0   0   0   2   1   0   1  0.000000 *  100/100     OverlappingTemplate
-  1   0   1   2   0   0   0   0  95   1  0.000000 *  100/100     Universal
-  0   0   1   0   1  94   2   1   0   1  0.000000 *  100/100     ApproximateEntropy
-  0   0   1   0   0   1   0   0   1   0     ----       3/3       RandomExcursions
-  1   0   0   0   1   1   0   0   0   0     ----       3/3       RandomExcursions
-  2   0   0   0   0   0   0   1   0   0     ----       3/3       RandomExcursions
-  0   1   1   0   0   0   0   1   0   0     ----       3/3       RandomExcursions
-  0   0   2   0   1   0   0   0   0   0     ----       3/3       RandomExcursions
-  0   1   1   1   0   0   0   0   0   0     ----       3/3       RandomExcursions
-  0   0   1   1   1   0   0   0   0   0     ----       3/3       RandomExcursions
-  1   0   0   0   0   1   0   0   0   1     ----       3/3       RandomExcursions
-  0   0   0   3   0   0   0   0   0   0     ----       3/3       RandomExcursionsVariant
-  0   0   1   1   1   0   0   0   0   0     ----       3/3       RandomExcursionsVariant
-  0   0   0   1   0   1   0   1   0   0     ----       3/3       RandomExcursionsVariant
-  0   0   0   0   1   0   1   0   1   0     ----       3/3       RandomExcursionsVariant
-  0   0   0   0   0   1   0   1   0   1     ----       3/3       RandomExcursionsVariant
-  0   0   0   0   2   0   0   0   1   0     ----       3/3       RandomExcursionsVariant
-  0   1   0   1   0   0   1   0   0   0     ----       3/3       RandomExcursionsVariant
-  1   0   2   0   0   0   0   0   0   0     ----       3/3       RandomExcursionsVariant
-  1   0   1   0   0   1   0   0   0   0     ----       3/3       RandomExcursionsVariant
-  0   0   0   1   0   0   0   0   1   1     ----       3/3       RandomExcursionsVariant
-  0   0   0   0   0   1   1   1   0   0     ----       3/3       RandomExcursionsVariant
-  0   1   0   0   0   0   0   0   1   1     ----       3/3       RandomExcursionsVariant
-  0   1   0   0   0   0   0   0   2   0     ----       3/3       RandomExcursionsVariant
-  0   1   0   1   0   0   0   1   0   0     ----       3/3       RandomExcursionsVariant
-  0   1   0   1   0   0   0   0   1   0     ----       3/3       RandomExcursionsVariant
-  0   0   1   0   0   0   0   1   1   0     ----       3/3       RandomExcursionsVariant
-  0   0   0   1   0   0   1   0   0   1     ----       3/3       RandomExcursionsVariant
-  0   0   0   0   2   0   0   0   0   1     ----       3/3       RandomExcursionsVariant
- 93   0   1   1   0   1   2   0   2   0  0.000000 *  100/100     Serial
- 94   0   0   2   0   1   2   1   0   0  0.000000 *  100/100     Serial
- 95   0   1   2   1   1   0   0   0   0  0.000000 *  100/100     LinearComplexity
+  0   0   2   0   0   1  95   0   1   1  0.000000 *  100/100     Frequency
+  2  94   0   0   0   0   0   2   2   0  0.000000 *  100/100     BlockFrequency
+  0   1  93   1   1   1   1   2   0   0  0.000000 *  100/100     CumulativeSums
+  0   1  94   1   0   3   0   0   0   1  0.000000 *  100/100     CumulativeSums
+  0   0   2   0   1  96   0   0   1   0  0.000000 *  100/100     Runs
+  0   0   1   2  95   1   0   0   1   0  0.000000 *  100/100     LongestRun
+  4   0  94   0   0   1   0   1   0   0  0.000000 *  100/100     Rank
+  0   1  95   0   0   0   1   1   0   2  0.000000 *  100/100     FFT
+  0   0   0   1   0  94   1   2   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   1  94   0   0   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   1   1   0  94   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   0   1   0  94   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   1  94   3   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   0   1   0  94   1   0   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   1   1   0  93   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   0   2  93   1   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   1  93   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   2  94   2   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   1   0  93   1   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   0   1  94   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   2   0   2  93   0   1   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   0   1  93   0   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   2   2   0  94   0   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   0   1   0  94   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   0   1   1  94   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   3   2  93   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   1   0  94   1   2   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   0   0  93   1   0   1   3  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   0   0  93   1   1   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   1   1  94   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   2   0  94   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  3   0   0   2   0  93   0   0   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   3   0   1   0  93   0   1   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  2   2   1   2   0  93   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   2   0   0  93   1   0   0   3  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   2   1  94   1   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   1   1  96   0   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   0  93   1   3   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   0  93   0   0   3   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   0   0  94   1   0   2   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   2   1  93   3   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   2   1  93   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   0  94   1   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   2   1  93   1   0   3   0  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   1   0   1  93   0   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   1   0  95   2   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   0   0   0  93   0   2   2   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   0   0   0  93   1   3   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   1   1  94   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   3  93   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   1   0  93   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   0  94   2   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   0   3   1  93   1   0   0   0  0.000000 *   99/100     NonOverlappingTemplate
+  3   0   0   1   0  93   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   1   2   0  94   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   0   1  95   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   1   0   1  93   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   1  94   1   0   3   0  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   1   1   1  93   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   1  94   1   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   1   0   1   1  93   1   0   0   1  0.000000 *   99/100     NonOverlappingTemplate
+  0   0   0   1   1  94   0   3   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   0   0  97   0   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   1   0   0  93   3   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   2   1  93   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   0   1   0  94   0   3   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   2   0   1  93   0   3   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   0   1   1  93   0   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   3   1   1  93   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  3   0   0   1   0  93   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   1   0  94   1   1   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   2   0   3  93   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   0   0  94   0   2   4   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   2  94   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   2   0   0  93   0   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   0  95   1   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   1  94   1   0   0   3  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   0   1  94   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   1   1   0   0  94   1   0   0   1  0.000000 *   99/100     NonOverlappingTemplate
+  2   0   2   0   2  93   0   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   0   0  94   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   1   0   0  95   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   1   0  94   1   2   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   1   0   0  93   0   1   2   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   5   0   0   1  93   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   0  93   0   3   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   0   0  93   1   1   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   3   3   0  93   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   4   0   1  93   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   3   0   0   0  93   1   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   3  93   0   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   2   0  93   0   1   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   0   2  93   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  2   1   2   0   0  93   0   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   1  93   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   1   2  93   0   0   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   0   2  93   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   2   1   0  94   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   1   0   1  93   1   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   2   0  93   0   2   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  3   1   1   0   0  93   2   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   1   0  94   0   2   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   2  93   1   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   0   1  94   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   0   0   0  95   0   0   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   0   1   1  93   0   1   0   2  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   2   2  93   0   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   3   0  93   0   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   3   0   0   0  93   0   2   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   0   1   1  93   0   1   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   2   1   1  93   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   2   1   0  93   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   0   1  94   2   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   2   0  94   0   0   2   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   1   0   0  94   2   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   1   0   0  93   1   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   1   1  93   0   1   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   3   1  93   0   0   2   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   2   0  94   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   2   0   0   1  93   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   0   0   0  96   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   0   1  95   1   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   1   0  93   1   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   2  94   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   2   2  93   0   0   0   3  0.000000 *  100/100     NonOverlappingTemplate
+  0   3   0   0   1  93   1   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   1   0   0  94   2   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   1  94   1   3   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   1   1  94   1   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   1   1  94   0   2   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   1   1   1   0  94   0   1   0   0  0.000000 *   99/100     NonOverlappingTemplate
+  1   0   1   1   1  94   1   0   1   0  0.000000 *   99/100     NonOverlappingTemplate
+  1   2   0   0   0  96   0   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   1   1   1  94   0   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   2   2  93   2   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   0   0  94   1   1   1   2  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   1   1   1  94   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   0   3   0  93   0   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   2   0   0  93   0   0   4   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   3   2   0   0  93   1   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   1   1   1  94   1   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   0   0   0  95   0   0   1   4  0.000000 *  100/100     NonOverlappingTemplate
+  2   1   0   0   0  93   2   1   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  3   0   0   1   1  93   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   1   2   0  93   0   2   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   1   0  93   2   1   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  2   0   1   2   1  94   0   0   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   0   3   1   0  94   0   1   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  2   1   1   1   0  93   1   1   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   3   1   0   0  93   1   0   1   1  0.000000 *  100/100     NonOverlappingTemplate
+  0   2   2   1   0  94   0   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   0   1   1   0  94   0   0   3   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   0   0   2  93   2   0   0   1  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   1   2   1  93   0   0   0   1  0.000000 *   99/100     NonOverlappingTemplate
+  0   2   0   0   1  95   0   2   0   0  0.000000 *  100/100     NonOverlappingTemplate
+  1   1   1   0   0  95   1   0   1   0  0.000000 *  100/100     NonOverlappingTemplate
+  0   1   0   0   0   1   3   1   0  94  0.000000 *  100/100     OverlappingTemplate
+  2   1   1   1   0   0   1   0   0  94  0.000000 *  100/100     Universal
+  0  95   0   1   0   1   0   0   2   1  0.000000 *  100/100     ApproximateEntropy
+  0   1   0   1   0   0   1   1   1   0     ----       5/5       RandomExcursions
+  0   0   2   0   2   0   0   0   1   0     ----       5/5       RandomExcursions
+  0   2   0   0   0   1   0   0   1   1     ----       5/5       RandomExcursions
+  0   0   1   0   0   0   0   0   1   3     ----       5/5       RandomExcursions
+  1   0   0   1   1   0   0   0   2   0     ----       5/5       RandomExcursions
+  1   0   0   1   0   1   1   1   0   0     ----       5/5       RandomExcursions
+  2   0   2   0   1   0   0   0   0   0     ----       5/5       RandomExcursions
+  2   0   0   1   0   0   0   1   1   0     ----       5/5       RandomExcursions
+  0   1   0   0   2   1   0   1   0   0     ----       5/5       RandomExcursionsVariant
+  0   1   0   2   1   0   1   0   0   0     ----       5/5       RandomExcursionsVariant
+  0   1   0   2   1   1   0   0   0   0     ----       5/5       RandomExcursionsVariant
+  1   0   2   0   0   1   0   0   1   0     ----       5/5       RandomExcursionsVariant
+  1   0   2   0   0   0   0   0   0   2     ----       5/5       RandomExcursionsVariant
+  1   0   0   1   1   0   0   0   1   1     ----       5/5       RandomExcursionsVariant
+  1   0   0   0   1   0   1   1   1   0     ----       5/5       RandomExcursionsVariant
+  1   0   0   0   0   0   0   2   1   1     ----       5/5       RandomExcursionsVariant
+  1   0   0   0   0   0   1   1   0   2     ----       5/5       RandomExcursionsVariant
+  1   0   0   2   0   0   0   1   1   0     ----       4/5       RandomExcursionsVariant
+  1   1   1   0   1   0   0   0   0   1     ----       4/5       RandomExcursionsVariant
+  1   2   0   1   0   0   0   0   1   0     ----       5/5       RandomExcursionsVariant
+  3   0   1   0   0   0   0   1   0   0     ----       5/5       RandomExcursionsVariant
+  3   1   0   0   0   0   0   0   0   1     ----       5/5       RandomExcursionsVariant
+  3   1   0   0   0   1   0   0   0   0     ----       5/5       RandomExcursionsVariant
+  2   3   0   0   0   0   0   0   0   0     ----       5/5       RandomExcursionsVariant
+  3   0   2   0   0   0   0   0   0   0     ----       5/5       RandomExcursionsVariant
+  3   0   0   1   1   0   0   0   0   0     ----       5/5       RandomExcursionsVariant
+ 94   1   0   0   3   0   0   0   0   2  0.000000 *    6/100  *  Serial
+ 95   0   2   2   0   0   0   0   1   0  0.000000 *    6/100  *  Serial
+  0   1   1   0   0   2   1  94   1   0  0.000000 *  100/100     LinearComplexity
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
@@ -201,7 +201,7 @@ random excursion (variant) test is approximately = 96 for a
 sample size = 100 binary sequences.
 
 The minimum pass rate for the random excursion (variant) test
-is approximately = 2 for a sample size = 3 binary sequences.
+is approximately = 4 for a sample size = 5 binary sequences.
 
 For further guidelines construct a probability table using the MAPLE program
 provided in the addendum section of the documentation.

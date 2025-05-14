@@ -3,103 +3,148 @@
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 65696.493568
-		(d) Psi_m-1             = 32914.272256
-		(e) Psi_m-2             = 16613.371904
-		(f) Del_1               = 32782.221312
-		(g) Del_2               = 16481.320960
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 322782.689690
+		(d) Psi_m-1             = 268374.944973
+		(e) Psi_m-2             = 230838.080307
+		(f) Del_1               = 54407.744717
+		(g) Del_2               = 16870.880051
 		---------------------------------------------
-SUCCESS		p_value1 = 0.476815
-SUCCESS		p_value2 = 0.294513
+FAILURE		p_value1 = 0.000000
+FAILURE		p_value2 = 0.003825
 
 			       SERIAL TEST
 		---------------------------------------------
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 64417.099776
-		(d) Psi_m-1             = 32003.190784
-		(e) Psi_m-2             = 16020.697088
-		(f) Del_1               = 32413.908992
-		(g) Del_2               = 16431.415296
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 347389.281894
+		(d) Psi_m-1             = 291282.339430
+		(e) Psi_m-2             = 251976.789197
+		(f) Del_1               = 56106.942464
+		(g) Del_2               = 16801.392230
 		---------------------------------------------
-SUCCESS		p_value1 = 0.917062
-SUCCESS		p_value2 = 0.395364
+FAILURE		p_value1 = 0.000000
+SUCCESS		p_value2 = 0.011006
 
 			       SERIAL TEST
 		---------------------------------------------
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 65842.638848
-		(d) Psi_m-1             = 33011.527680
-		(e) Psi_m-2             = 16662.491136
-		(f) Del_1               = 32831.111168
-		(g) Del_2               = 16482.074624
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 359076.146381
+		(d) Psi_m-1             = 301735.416627
+		(e) Psi_m-2             = 261127.521894
+		(f) Del_1               = 57340.729754
+		(g) Del_2               = 16732.835021
 		---------------------------------------------
-SUCCESS		p_value1 = 0.401691
-SUCCESS		p_value2 = 0.293085
+FAILURE		p_value1 = 0.000000
+SUCCESS		p_value2 = 0.027605
 
 			       SERIAL TEST
 		---------------------------------------------
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 64627.732480
-		(d) Psi_m-1             = 32240.234496
-		(e) Psi_m-2             = 16282.120192
-		(f) Del_1               = 32387.497984
-		(g) Del_2               = 16429.383680
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 362537.076326
+		(d) Psi_m-1             = 304711.235994
+		(e) Psi_m-2             = 263601.273242
+		(f) Del_1               = 57825.840333
+		(g) Del_2               = 16715.877581
 		---------------------------------------------
-SUCCESS		p_value1 = 0.931825
-SUCCESS		p_value2 = 0.399685
+FAILURE		p_value1 = 0.000000
+SUCCESS		p_value2 = 0.034014
 
 			       SERIAL TEST
 		---------------------------------------------
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 65244.295168
-		(d) Psi_m-1             = 32229.617664
-		(e) Psi_m-2             = 15833.755648
-		(f) Del_1               = 33014.677504
-		(g) Del_2               = 16618.815488
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 350421.776794
+		(d) Psi_m-1             = 293870.978662
+		(e) Psi_m-2             = 254118.941491
+		(f) Del_1               = 56550.798131
+		(g) Del_2               = 16798.760960
 		---------------------------------------------
-SUCCESS		p_value1 = 0.167578
-SUCCESS		p_value2 = 0.097709
+FAILURE		p_value1 = 0.000000
+SUCCESS		p_value2 = 0.011427
 
 			       SERIAL TEST
 		---------------------------------------------
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 65945.923584
-		(d) Psi_m-1             = 33171.763200
-		(e) Psi_m-2             = 16591.876096
-		(f) Del_1               = 32774.160384
-		(g) Del_2               = 16194.273280
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 342376.210432
+		(d) Psi_m-1             = 286389.631386
+		(e) Psi_m-2             = 246990.662861
+		(f) Del_1               = 55986.579046
+		(g) Del_2               = 16587.610522
 		---------------------------------------------
-SUCCESS		p_value1 = 0.489363
-SUCCESS		p_value2 = 0.852793
+FAILURE		p_value1 = 0.000000
+SUCCESS		p_value2 = 0.130538
 
 			       SERIAL TEST
 		---------------------------------------------
 		 COMPUTATIONAL INFORMATION:		  
 		---------------------------------------------
 		(a) Block length    (m) = 16
-		(b) Sequence length (n) = 1000000
-		(c) Psi_m               = 67097.391104
-		(d) Psi_m-1             = 33443.934208
-		(e) Psi_m-2             = 16818.794496
-		(f) Del_1               = 33653.456896
-		(g) Del_2               = 17028.317184
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 362950.307021
+		(d) Psi_m-1             = 304411.369472
+		(e) Psi_m-2             = 262997.604762
+		(f) Del_1               = 58538.937549
+		(g) Del_2               = 17125.172838
 		---------------------------------------------
-FAILURE		p_value1 = 0.000301
-FAILURE		p_value2 = 0.000218
+FAILURE		p_value1 = 0.000000
+FAILURE		p_value2 = 0.000027
+
+			       SERIAL TEST
+		---------------------------------------------
+		 COMPUTATIONAL INFORMATION:		  
+		---------------------------------------------
+		(a) Block length    (m) = 16
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 390948.125082
+		(d) Psi_m-1             = 330526.049894
+		(e) Psi_m-2             = 287079.813939
+		(f) Del_1               = 60422.075187
+		(g) Del_2               = 16975.839232
+		---------------------------------------------
+FAILURE		p_value1 = 0.000000
+FAILURE		p_value2 = 0.000609
+
+			       SERIAL TEST
+		---------------------------------------------
+		 COMPUTATIONAL INFORMATION:		  
+		---------------------------------------------
+		(a) Block length    (m) = 16
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 340773.697946
+		(d) Psi_m-1             = 285201.830707
+		(e) Psi_m-2             = 246165.980774
+		(f) Del_1               = 55571.867238
+		(g) Del_2               = 16536.017306
+		---------------------------------------------
+FAILURE		p_value1 = 0.000000
+SUCCESS		p_value2 = 0.200207
+
+			       SERIAL TEST
+		---------------------------------------------
+		 COMPUTATIONAL INFORMATION:		  
+		---------------------------------------------
+		(a) Block length    (m) = 16
+		(b) Sequence length (n) = 10000000
+		(c) Psi_m               = 400932.534682
+		(d) Psi_m-1             = 340527.859302
+		(e) Psi_m-2             = 297158.257869
+		(f) Del_1               = 60404.675379
+		(g) Del_2               = 17035.073946
+		---------------------------------------------
+FAILURE		p_value1 = 0.000000
+FAILURE		p_value2 = 0.000190
 
